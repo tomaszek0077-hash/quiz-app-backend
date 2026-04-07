@@ -1,11 +1,10 @@
-'use strict';
+import express, { Request, Response } from 'express';
 
-const express = require('express');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
 // Health check endpoint
-app.get('/health', (req, res) => {
+app.get('/health', (req: Request, res: Response) => {
     res.status(200).json({ status: 'UP' });
 });
 
